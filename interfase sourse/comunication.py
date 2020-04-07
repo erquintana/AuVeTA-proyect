@@ -16,6 +16,6 @@ time.sleep(1)
 
 
 while True:
-    values0 = arduino.readline().decode("utf-8")
+    values0 = arduino.readline().decode("utf-8") # here we read data from serial port
     
 arduino.close()
