@@ -12,6 +12,7 @@
 int sensorPin = 3; // sensor decl
 int buttonPin = 13; // button decl
 int buzzerPin = 6; // buzzer decl
+int finishButton = 1;
 // comunication decl RX
 // comunication decl TX
 Encoder encoder(8, 9); // rotatory encoder setup
@@ -25,24 +26,22 @@ int present = 0;
 int previous = 0;
 unsigned long elapsed = 0;
 unsigned long elapsed_prev = 0;
+
 String st = "";
 int rpso = 0;
 int enc = 0;
 int oldPosition  = 0;
 int newPosition = 0;
 int resolution = 100;
+
 int msi = millis() / resolution;
 unsigned long millPrev = 0;
 unsigned long mill = 0;
+int countForFinishing;
+bool restart = false;
+int aux0;
+int flag = 0;
 
-/*int hi = hour();
-  int mi = minute();
-  int si = second() - 1;
-  int h;
-  int m;
-  int s = 0;
-  int sPrev = 0;
-*/
 bool state = false;
 int R = 10;
 int G = 11;
@@ -53,11 +52,14 @@ void setup() {
   Serial.begin(19200); // serial for test and visualization, comment later if not needed
   pinMode(sensorPin, INPUT); // black = 1 || white = 0
   pinMode(buttonPin, INPUT); // on = 0
-  pinMode(buzzerPin, OUTPUT);
+  pinMode(buzzerPin, OUTPUT); // pressed = 0
+  pinMode(finishButton, INPUT);
+
   pinMode(R, OUTPUT);
   pinMode(G, OUTPUT);
   pinMode(B, OUTPUT);
-  st = "m,r,e,s";
+
+  st = "m,r,e,s,f";
   Serial.println(st);
 
 }
@@ -66,6 +68,7 @@ void setup() {
 
 void loop() {
 
+  countForFinishFunct();
 
   if ((digitalRead(buttonPin) == 0) && state == false) {
     advTone();
@@ -106,11 +109,7 @@ void advTone() {
 
 void printData() {
   millPrev = mill;
-  /*  sPrev = s;
-    h = hour() - hi;
-    m = minute() - mi;
-    s = second() - si;
-  */
+
   mill = millis() / resolution - msi;
   enc = getEncVal();
   if (millPrev != mill) {
@@ -176,4 +175,25 @@ int getEncVal() {
     return oldPosition;
   }
 
+}
+
+void countForFinishFunct() {
+  if (digitalRead(finishButton) == 0) {
+    aux0 = aux0 + 1;
+  }
+  while (aux0 > 150 && state == false) {
+    digitalWrite(R, LOW);
+    digitalWrite(G, LOW);
+    digitalWrite(B, HIGH);
+    delay(500);
+    digitalWrite(B, LOW);
+    delay(500);
+
+
+    if (flag == 0) {
+      Serial.println("FINISHED");
+    flag = 1;
+    }
+    
+  }
 }
