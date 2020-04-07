@@ -1,0 +1,305 @@
+\hypertarget{h__comunicaci_xC3_xB3n__interfaz_8h}{}\section{incl/h\+\_\+comunicación\+\_\+interfaz.h File Reference}
+\label{h__comunicaci_xC3_xB3n__interfaz_8h}\index{incl/h\+\_\+comunicación\+\_\+interfaz.\+h@{incl/h\+\_\+comunicación\+\_\+interfaz.\+h}}
+
+
+Archivo de encabezado para la interfaz y la comunicación.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$termios.\+h$>$}\newline
+{\ttfamily \#include $<$sys/ioctl.\+h$>$}\newline
+{\ttfamily \#include $<$getopt.\+h$>$}\newline
+{\ttfamily \#include $<$gtk/gtk.\+h$>$}\newline
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_mo_button}{Mo\+Button}
+\begin{DoxyCompactList}\small\item\em Estructura de datos para realizar un seguimiento de los botones de la interfaz. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{h__comunicaci_xC3_xB3n__interfaz_8h_a6821bafc3c88dfb2e433a095df9940c6}{B\+U\+F\+\_\+\+S\+I\+ZE}~88
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{h__comunicaci_xC3_xB3n__interfaz_8h_a52533a9bdc6cd813d44c420693119233}{serialport\+\_\+init} (const char $\ast$serialport, int baud)
+\begin{DoxyCompactList}\small\item\em Función serialport\+\_\+init\+: Inicializa el puerto serial. \end{DoxyCompactList}\item 
+int \hyperlink{h__comunicaci_xC3_xB3n__interfaz_8h_aebb9f79c231ebb5025b4cf23a9ff9938}{serialport\+\_\+write} (int fd, const char $\ast$str)
+\begin{DoxyCompactList}\small\item\em Función serialport\+\_\+write\+: Escribe en el puerto serial. \end{DoxyCompactList}\item 
+gint \hyperlink{h__comunicaci_xC3_xB3n__interfaz_8h_af8636a06939c16d96608a63de771741d}{Close\+App\+Window} (Gtk\+Widget $\ast$widget, gpointer data)
+\begin{DoxyCompactList}\small\item\em Función Close\+App\+Window\+: Cierra la ventana creada de la interfaz. \end{DoxyCompactList}\item 
+void \hyperlink{h__comunicaci_xC3_xB3n__interfaz_8h_a62b9a72669fa3716d4383d3bcc9471ef}{key\+\_\+press} (Gtk\+Widget $\ast$widget, Gdk\+Event\+Key $\ast$event, gpointer data)
+\begin{DoxyCompactList}\small\item\em Función key\+\_\+press\+: Se encarga de la lectura del botón presionado en el teclado. \end{DoxyCompactList}\item 
+void \hyperlink{h__comunicaci_xC3_xB3n__interfaz_8h_abe952f75c917fd9ab0ffec446feb1c5b}{button\+\_\+clicked} (Gtk\+Widget $\ast$widget, gpointer data)
+\begin{DoxyCompactList}\small\item\em Función button\+\_\+clicked\+: Se encarga de leer que el botón en la interfaz se haya clickeado. \end{DoxyCompactList}\item 
+Gtk\+Widget $\ast$ \hyperlink{h__comunicaci_xC3_xB3n__interfaz_8h_a988ff29d97e55cdba72153b0202765c8}{Create\+Button} (Gtk\+Widget $\ast$table, char $\ast$sz\+Label, int row, int column)
+\begin{DoxyCompactList}\small\item\em Función Create\+Button\+: Se encarga de crear las características de cada botón. \end{DoxyCompactList}\item 
+void \hyperlink{h__comunicaci_xC3_xB3n__interfaz_8h_a8aadf259d990b08076fce3434b1da00c}{Create\+Control\+Buttons} (Gtk\+Widget $\ast$table)
+\begin{DoxyCompactList}\small\item\em Función Create\+Control\+Buttons\+: Se encarga de poner en la interfaz los botones que se crearon. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_mo_button}{Mo\+Button} $\ast$ \hyperlink{h__comunicaci_xC3_xB3n__interfaz_8h_a4307ca4101139cabb51676d040862365}{button\+List}
+\begin{DoxyCompactList}\small\item\em Lista \hyperlink{struct_mo_button}{Mo\+Button}\+: Crea una lista que contendrá los botones que aparecerán en la interfaz gráfica. \end{DoxyCompactList}\item 
+int \hyperlink{h__comunicaci_xC3_xB3n__interfaz_8h_adff7d306bb56e132b0060191672c9525}{numbuttons}
+\begin{DoxyCompactList}\small\item\em int numbuttons\+: Es la variable de tipo entero que contiene el número de botones que estarán en la lista \hyperlink{struct_mo_button}{Mo\+Button}. \end{DoxyCompactList}\item 
+Gtk\+Widget $\ast$ \hyperlink{h__comunicaci_xC3_xB3n__interfaz_8h_ad53c154a0a2663edc2976c3e6e843cb2}{label}
+\begin{DoxyCompactList}\small\item\em Widget label\+: Este es el panel en el que se \char`\"{}imprime\char`\"{} la función de los botones. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Archivo de encabezado para la interfaz y la comunicación. 
+
+\begin{DoxyAuthor}{Author}
+Jorge Isaac Fallas Mejía B62562 
+
+Esteban Rodríguez Quintana B66076 
+
+Fabio Villalobos Pacheco B78346 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2019-\/07-\/18 
+\end{DoxyDate}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{h__comunicaci_xC3_xB3n__interfaz_8h_a6821bafc3c88dfb2e433a095df9940c6}\label{h__comunicaci_xC3_xB3n__interfaz_8h_a6821bafc3c88dfb2e433a095df9940c6}} 
+\index{h\+\_\+comunicación\+\_\+interfaz.\+h@{h\+\_\+comunicación\+\_\+interfaz.\+h}!B\+U\+F\+\_\+\+S\+I\+ZE@{B\+U\+F\+\_\+\+S\+I\+ZE}}
+\index{B\+U\+F\+\_\+\+S\+I\+ZE@{B\+U\+F\+\_\+\+S\+I\+ZE}!h\+\_\+comunicación\+\_\+interfaz.\+h@{h\+\_\+comunicación\+\_\+interfaz.\+h}}
+\subsubsection{\texorpdfstring{B\+U\+F\+\_\+\+S\+I\+ZE}{BUF\_SIZE}}
+{\footnotesize\ttfamily \#define B\+U\+F\+\_\+\+S\+I\+ZE~88}
+
+
+
+Definition at line 27 of file h\+\_\+comunicación\+\_\+interfaz.\+h.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{h__comunicaci_xC3_xB3n__interfaz_8h_abe952f75c917fd9ab0ffec446feb1c5b}\label{h__comunicaci_xC3_xB3n__interfaz_8h_abe952f75c917fd9ab0ffec446feb1c5b}} 
+\index{h\+\_\+comunicación\+\_\+interfaz.\+h@{h\+\_\+comunicación\+\_\+interfaz.\+h}!button\+\_\+clicked@{button\+\_\+clicked}}
+\index{button\+\_\+clicked@{button\+\_\+clicked}!h\+\_\+comunicación\+\_\+interfaz.\+h@{h\+\_\+comunicación\+\_\+interfaz.\+h}}
+\subsubsection{\texorpdfstring{button\+\_\+clicked()}{button\_clicked()}}
+{\footnotesize\ttfamily void button\+\_\+clicked (\begin{DoxyParamCaption}\item[{Gtk\+Widget $\ast$}]{widget,  }\item[{gpointer}]{data }\end{DoxyParamCaption})}
+
+
+
+Función button\+\_\+clicked\+: Se encarga de leer que el botón en la interfaz se haya clickeado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em widget} & La \char`\"{}caja\char`\"{} que contiene el texto del botón. \\
+\hline
+{\em data} & El puntero del texto contenido en el \char`\"{}widget\char`\"{}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna la tarea del botón clickeado.
+\end{DoxyReturn}
+void button\+\_\+clicked\+: Es una función de tipo void que recibe un widget y la información, este contiene instancias de las funciones que trabajan con el puerto serial, dos punteros de tipo char, el str se encarga de agarrar el texto del botón y la información, además contiene la ventana que contiene la interfaz, luego varias condiciones if que permiten comparar el botón clickeado o presinado en el teclado que conecta con el puerto serial y retorna la tarea que realiza el vehículo. 
+
+Definition at line 67 of file comunicación\+\_\+interfaz.\+c.
+
+\mbox{\Hypertarget{h__comunicaci_xC3_xB3n__interfaz_8h_af8636a06939c16d96608a63de771741d}\label{h__comunicaci_xC3_xB3n__interfaz_8h_af8636a06939c16d96608a63de771741d}} 
+\index{h\+\_\+comunicación\+\_\+interfaz.\+h@{h\+\_\+comunicación\+\_\+interfaz.\+h}!Close\+App\+Window@{Close\+App\+Window}}
+\index{Close\+App\+Window@{Close\+App\+Window}!h\+\_\+comunicación\+\_\+interfaz.\+h@{h\+\_\+comunicación\+\_\+interfaz.\+h}}
+\subsubsection{\texorpdfstring{Close\+App\+Window()}{CloseAppWindow()}}
+{\footnotesize\ttfamily gint Close\+App\+Window (\begin{DoxyParamCaption}\item[{Gtk\+Widget $\ast$}]{widget,  }\item[{gpointer}]{data }\end{DoxyParamCaption})}
+
+
+
+Función Close\+App\+Window\+: Cierra la ventana creada de la interfaz. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em widget} & La \char`\"{}caja\char`\"{} que contiene el texto del botón. \\
+\hline
+{\em data} & El puntero del texto contenido en el \char`\"{}widget\char`\"{}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+F\+A\+L\+SE\+: Retorna el cierre de la ventana del programa y finalización de operación.
+\end{DoxyReturn}
+Función Close\+App\+Window\+: Cierra la ventana creada de la interfaz. 
+
+Definition at line 20 of file comunicación\+\_\+interfaz.\+c.
+
+\mbox{\Hypertarget{h__comunicaci_xC3_xB3n__interfaz_8h_a988ff29d97e55cdba72153b0202765c8}\label{h__comunicaci_xC3_xB3n__interfaz_8h_a988ff29d97e55cdba72153b0202765c8}} 
+\index{h\+\_\+comunicación\+\_\+interfaz.\+h@{h\+\_\+comunicación\+\_\+interfaz.\+h}!Create\+Button@{Create\+Button}}
+\index{Create\+Button@{Create\+Button}!h\+\_\+comunicación\+\_\+interfaz.\+h@{h\+\_\+comunicación\+\_\+interfaz.\+h}}
+\subsubsection{\texorpdfstring{Create\+Button()}{CreateButton()}}
+{\footnotesize\ttfamily Gtk\+Widget$\ast$ Create\+Button (\begin{DoxyParamCaption}\item[{Gtk\+Widget $\ast$}]{table,  }\item[{char $\ast$}]{sz\+Label,  }\item[{int}]{row,  }\item[{int}]{column }\end{DoxyParamCaption})}
+
+
+
+Función Create\+Button\+: Se encarga de crear las características de cada botón. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table} & La tabla que contiene los botones. \\
+\hline
+{\em sz\+Label} & El tamaño del texto que contiene el botón. \\
+\hline
+{\em row} & La fila donde se ubicará el botón. \\
+\hline
+{\em column} & La columna donde se ubicará el botón. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+button\+: Retorna el botón creado.
+\end{DoxyReturn}
+Función Create\+Button\+: Se encarga de crear las características de cada botón. 
+
+Definition at line 187 of file comunicación\+\_\+interfaz.\+c.
+
+\mbox{\Hypertarget{h__comunicaci_xC3_xB3n__interfaz_8h_a8aadf259d990b08076fce3434b1da00c}\label{h__comunicaci_xC3_xB3n__interfaz_8h_a8aadf259d990b08076fce3434b1da00c}} 
+\index{h\+\_\+comunicación\+\_\+interfaz.\+h@{h\+\_\+comunicación\+\_\+interfaz.\+h}!Create\+Control\+Buttons@{Create\+Control\+Buttons}}
+\index{Create\+Control\+Buttons@{Create\+Control\+Buttons}!h\+\_\+comunicación\+\_\+interfaz.\+h@{h\+\_\+comunicación\+\_\+interfaz.\+h}}
+\subsubsection{\texorpdfstring{Create\+Control\+Buttons()}{CreateControlButtons()}}
+{\footnotesize\ttfamily void Create\+Control\+Buttons (\begin{DoxyParamCaption}\item[{Gtk\+Widget $\ast$}]{table }\end{DoxyParamCaption})}
+
+
+
+Función Create\+Control\+Buttons\+: Se encarga de poner en la interfaz los botones que se crearon. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table} & La tabla que contiene los botones. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna los botones en la interfaz.
+\end{DoxyReturn}
+Función Create\+Control\+Buttons\+: Se encarga de poner en la interfaz los botones que se crearon. 
+
+Definition at line 222 of file comunicación\+\_\+interfaz.\+c.
+
+\mbox{\Hypertarget{h__comunicaci_xC3_xB3n__interfaz_8h_a62b9a72669fa3716d4383d3bcc9471ef}\label{h__comunicaci_xC3_xB3n__interfaz_8h_a62b9a72669fa3716d4383d3bcc9471ef}} 
+\index{h\+\_\+comunicación\+\_\+interfaz.\+h@{h\+\_\+comunicación\+\_\+interfaz.\+h}!key\+\_\+press@{key\+\_\+press}}
+\index{key\+\_\+press@{key\+\_\+press}!h\+\_\+comunicación\+\_\+interfaz.\+h@{h\+\_\+comunicación\+\_\+interfaz.\+h}}
+\subsubsection{\texorpdfstring{key\+\_\+press()}{key\_press()}}
+{\footnotesize\ttfamily void key\+\_\+press (\begin{DoxyParamCaption}\item[{Gtk\+Widget $\ast$}]{widget,  }\item[{Gdk\+Event\+Key $\ast$}]{event,  }\item[{gpointer}]{data }\end{DoxyParamCaption})}
+
+
+
+Función key\+\_\+press\+: Se encarga de la lectura del botón presionado en el teclado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em widget} & La \char`\"{}caja\char`\"{} que contiene el texto del botón. \\
+\hline
+{\em event} & El evento que lee el botón presionado. \\
+\hline
+{\em data} & El puntero del texto contenido en el \char`\"{}widget\char`\"{}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna la tarea del botón presionado.
+\end{DoxyReturn}
+Función key\+\_\+press\+: Se encarga de la lectura del botón presionado en el teclado. 
+
+Definition at line 37 of file comunicación\+\_\+interfaz.\+c.
+
+\mbox{\Hypertarget{h__comunicaci_xC3_xB3n__interfaz_8h_a52533a9bdc6cd813d44c420693119233}\label{h__comunicaci_xC3_xB3n__interfaz_8h_a52533a9bdc6cd813d44c420693119233}} 
+\index{h\+\_\+comunicación\+\_\+interfaz.\+h@{h\+\_\+comunicación\+\_\+interfaz.\+h}!serialport\+\_\+init@{serialport\+\_\+init}}
+\index{serialport\+\_\+init@{serialport\+\_\+init}!h\+\_\+comunicación\+\_\+interfaz.\+h@{h\+\_\+comunicación\+\_\+interfaz.\+h}}
+\subsubsection{\texorpdfstring{serialport\+\_\+init()}{serialport\_init()}}
+{\footnotesize\ttfamily int serialport\+\_\+init (\begin{DoxyParamCaption}\item[{const char $\ast$}]{serialport,  }\item[{int}]{baud }\end{DoxyParamCaption})}
+
+
+
+Función serialport\+\_\+init\+: Inicializa el puerto serial. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em serialport} & El nombre del puerto al que se conecta el módulo bluetooth. \\
+\hline
+{\em baud} & El baud rate que utiliza el módulo bluetooth. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int\+: Si el puerto pudo ser inicializado.
+\end{DoxyReturn}
+Función serialport\+\_\+init\+: Inicializa el puerto serial. 
+
+Definition at line 264 of file comunicación\+\_\+interfaz.\+c.
+
+\mbox{\Hypertarget{h__comunicaci_xC3_xB3n__interfaz_8h_aebb9f79c231ebb5025b4cf23a9ff9938}\label{h__comunicaci_xC3_xB3n__interfaz_8h_aebb9f79c231ebb5025b4cf23a9ff9938}} 
+\index{h\+\_\+comunicación\+\_\+interfaz.\+h@{h\+\_\+comunicación\+\_\+interfaz.\+h}!serialport\+\_\+write@{serialport\+\_\+write}}
+\index{serialport\+\_\+write@{serialport\+\_\+write}!h\+\_\+comunicación\+\_\+interfaz.\+h@{h\+\_\+comunicación\+\_\+interfaz.\+h}}
+\subsubsection{\texorpdfstring{serialport\+\_\+write()}{serialport\_write()}}
+{\footnotesize\ttfamily int serialport\+\_\+write (\begin{DoxyParamCaption}\item[{int}]{fd,  }\item[{const char $\ast$}]{str }\end{DoxyParamCaption})}
+
+
+
+Función serialport\+\_\+write\+: Escribe en el puerto serial. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & La función serialport\+\_\+init. \\
+\hline
+{\em str} & El caracter que se envía en el puerto. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int\+: El dato enviado por el puerto.
+\end{DoxyReturn}
+Función serialport\+\_\+write\+: Escribe en el puerto serial. 
+
+Definition at line 244 of file comunicación\+\_\+interfaz.\+c.
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{h__comunicaci_xC3_xB3n__interfaz_8h_a4307ca4101139cabb51676d040862365}\label{h__comunicaci_xC3_xB3n__interfaz_8h_a4307ca4101139cabb51676d040862365}} 
+\index{h\+\_\+comunicación\+\_\+interfaz.\+h@{h\+\_\+comunicación\+\_\+interfaz.\+h}!button\+List@{button\+List}}
+\index{button\+List@{button\+List}!h\+\_\+comunicación\+\_\+interfaz.\+h@{h\+\_\+comunicación\+\_\+interfaz.\+h}}
+\subsubsection{\texorpdfstring{button\+List}{buttonList}}
+{\footnotesize\ttfamily \hyperlink{struct_mo_button}{Mo\+Button}$\ast$ button\+List}
+
+
+
+Lista \hyperlink{struct_mo_button}{Mo\+Button}\+: Crea una lista que contendrá los botones que aparecerán en la interfaz gráfica. 
+
+
+
+Definition at line 48 of file h\+\_\+comunicación\+\_\+interfaz.\+h.
+
+\mbox{\Hypertarget{h__comunicaci_xC3_xB3n__interfaz_8h_ad53c154a0a2663edc2976c3e6e843cb2}\label{h__comunicaci_xC3_xB3n__interfaz_8h_ad53c154a0a2663edc2976c3e6e843cb2}} 
+\index{h\+\_\+comunicación\+\_\+interfaz.\+h@{h\+\_\+comunicación\+\_\+interfaz.\+h}!label@{label}}
+\index{label@{label}!h\+\_\+comunicación\+\_\+interfaz.\+h@{h\+\_\+comunicación\+\_\+interfaz.\+h}}
+\subsubsection{\texorpdfstring{label}{label}}
+{\footnotesize\ttfamily Gtk\+Widget$\ast$ label}
+
+
+
+Widget label\+: Este es el panel en el que se \char`\"{}imprime\char`\"{} la función de los botones. 
+
+
+
+Definition at line 62 of file h\+\_\+comunicación\+\_\+interfaz.\+h.
+
+\mbox{\Hypertarget{h__comunicaci_xC3_xB3n__interfaz_8h_adff7d306bb56e132b0060191672c9525}\label{h__comunicaci_xC3_xB3n__interfaz_8h_adff7d306bb56e132b0060191672c9525}} 
+\index{h\+\_\+comunicación\+\_\+interfaz.\+h@{h\+\_\+comunicación\+\_\+interfaz.\+h}!numbuttons@{numbuttons}}
+\index{numbuttons@{numbuttons}!h\+\_\+comunicación\+\_\+interfaz.\+h@{h\+\_\+comunicación\+\_\+interfaz.\+h}}
+\subsubsection{\texorpdfstring{numbuttons}{numbuttons}}
+{\footnotesize\ttfamily int numbuttons}
+
+
+
+int numbuttons\+: Es la variable de tipo entero que contiene el número de botones que estarán en la lista \hyperlink{struct_mo_button}{Mo\+Button}. 
+
+
+
+Definition at line 55 of file h\+\_\+comunicación\+\_\+interfaz.\+h.
+

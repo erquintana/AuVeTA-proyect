@@ -1,0 +1,674 @@
+\hypertarget{_au_ve_t_a_8c}{}\section{src/\+Au\+Ve\+TA.c File Reference}
+\label{_au_ve_t_a_8c}\index{src/\+Au\+Ve\+T\+A.\+c@{src/\+Au\+Ve\+T\+A.\+c}}
+{\ttfamily \#include $<$Servo.\+h$>$}\newline
+{\ttfamily \#include $<$Software\+Serial.\+h$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Software\+Serial \hyperlink{_au_ve_t_a_8c_a81e8be3e752f0b5d53de93109e8c9df3}{my\+Serial} (\hyperlink{_au_ve_t_a_8c_a32522045b380ef6ebe89d8ab4a51e2fe}{R\+X\+\_\+bluetooh}, \hyperlink{_au_ve_t_a_8c_a278564fec9adb8d2cb6ffb1d1f5d98c4}{T\+X\+\_\+bluetooh})
+\item 
+void \hyperlink{_au_ve_t_a_8c_a4fc01d736fe50cf5b977f755b675f11d}{setup} ()
+\item 
+void \hyperlink{_au_ve_t_a_8c_afe461d27b9c48d5921c00d521181f12f}{loop} ()
+\item 
+void \hyperlink{_au_ve_t_a_8c_af6e962867b289c8c2b90bd5a272a152d}{goR} (int PW)
+\begin{DoxyCompactList}\small\item\em Esta función da movimiento de rueda izquierda y por tanto un giro hacia la derecha del vehículo para el modo de tracking. \end{DoxyCompactList}\item 
+void \hyperlink{_au_ve_t_a_8c_a2b5d684278e21f9755065d0c0f8836a0}{goL} (int PW)
+\begin{DoxyCompactList}\small\item\em Esta función da movimiento de rueda derecha y por tanto un giro hacia la izquierda del vehículo para el modo de tracking. \end{DoxyCompactList}\item 
+void \hyperlink{_au_ve_t_a_8c_a3c6c84447446e1e00692a40403509f46}{go\+R\+\_\+control} ()
+\begin{DoxyCompactList}\small\item\em Esta función da movimiento de rueda izquierda y por tanto un giro hacia la derecha del vehículo para el modo de control. \end{DoxyCompactList}\item 
+void \hyperlink{_au_ve_t_a_8c_a01a9e10003495da066b27553db5cc9e6}{go\+L\+\_\+control} ()
+\begin{DoxyCompactList}\small\item\em Esta función da movimiento de rueda derecha y por tanto un giro hacia la izquierda del vehículo para el modo de control. \end{DoxyCompactList}\item 
+void \hyperlink{_au_ve_t_a_8c_a2ff90e7a086b9a5754839a9d6ce82deb}{forward\+\_\+control} ()
+\begin{DoxyCompactList}\small\item\em Esta función da movimiento de ambas ruedas en dirección de avance del vehículo para el modo de control. \end{DoxyCompactList}\item 
+void \hyperlink{_au_ve_t_a_8c_a86f5707dea93879735a756a067646dde}{reverse\+\_\+control} ()
+\begin{DoxyCompactList}\small\item\em Esta función da movimiento de ambas ruedas en dirección contraria al avance del vehículo para el modo de control. \end{DoxyCompactList}\item 
+void \hyperlink{_au_ve_t_a_8c_aae5e8de9460369ac62588681b3146383}{no\+\_\+move} ()
+\begin{DoxyCompactList}\small\item\em Esta función apaga motores del vehículo para el modo de control. \end{DoxyCompactList}\item 
+bool \hyperlink{_au_ve_t_a_8c_aab4c455e5120dab519f0bc8e3bc9c90b}{end\+\_\+detection} (int \+\_\+track1, int \+\_\+track2)
+\begin{DoxyCompactList}\small\item\em Esta función determina si se detecta el final del recorrido gracias a la condición recibida de un sensor de tracking y otro de obstáculo. \end{DoxyCompactList}\item 
+void \hyperlink{_au_ve_t_a_8c_ac97c8f3829c72068405bec6e763318ab}{obstacle\+\_\+detection} (bool \+\_\+obstacle\+\_\+presence)
+\begin{DoxyCompactList}\small\item\em Esta función determina si se detecta un obstáculo frontal gracias al sensor de obstáculo, en caso de presencia de obstáculo activa el servomotor para removerlo.. \end{DoxyCompactList}\item 
+void \hyperlink{_au_ve_t_a_8c_a6090a323c3a6f82d4f9888bbe497b146}{final\+\_\+track\+\_\+indicator} ()
+\begin{DoxyCompactList}\small\item\em Esta función solo enciende las luces en una determinada secuencia para indicar el final del recorrido. \end{DoxyCompactList}\item 
+void \hyperlink{_au_ve_t_a_8c_a602ed60e21531aef539b97a6ddd94358}{trompo} ()
+\begin{DoxyCompactList}\small\item\em Esta función hace que se activen las ruedas de manera que el vehíulo gire sobre su propio eje horizontal para el modo tracking. \end{DoxyCompactList}\item 
+void \hyperlink{_au_ve_t_a_8c_a70fe291af7aacebdc35e8ceca09d999c}{trompo\+\_\+final} (int power)
+\begin{DoxyCompactList}\small\item\em Esta función hace que se activen las ruedas de manera que el vehíulo gire sobre su propio eje horizontal para el modo control. \end{DoxyCompactList}\item 
+void \hyperlink{_au_ve_t_a_8c_a8bd2026d6d5e6712fab816c58a61a8a0}{tracking\+\_\+mode\+\_\+func} ()
+\begin{DoxyCompactList}\small\item\em Esta función implementa y ejecuta las acciones y funciones necesarias para el funcionamiento durante el modo tracking. \end{DoxyCompactList}\item 
+void \hyperlink{_au_ve_t_a_8c_a6f7b09e855c3f3cdcea60d89acbd86a9}{control\+\_\+mode\+\_\+func} ()
+\begin{DoxyCompactList}\small\item\em Esta función implementa y ejecuta las acciones y funciones necesarias para el funcionamiento durante el modo de control. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{_au_ve_t_a_8c_a32522045b380ef6ebe89d8ab4a51e2fe}{R\+X\+\_\+bluetooh} = 0
+\item 
+int \hyperlink{_au_ve_t_a_8c_a278564fec9adb8d2cb6ffb1d1f5d98c4}{T\+X\+\_\+bluetooh} = 1
+\item 
+int \hyperlink{_au_ve_t_a_8c_a54160e8df25f2b7bd4b79c66846422b5}{servo\+\_\+pin} = 11
+\item 
+int \hyperlink{_au_ve_t_a_8c_a8ed36056dc13650a155dffb6cf08e7ca}{obstacle\+\_\+pin} = 8
+\item 
+int \hyperlink{_au_ve_t_a_8c_a48ab186a7734c039bf8f4b9f4bb0d847}{track1\+\_\+pin} = 12
+\item 
+int \hyperlink{_au_ve_t_a_8c_a73d6395b8374d0ca4290405365f2ad89}{final\+\_\+pin} = 7
+\item 
+int \hyperlink{_au_ve_t_a_8c_ac78a94bff5a4300fa31918f5597aee5c}{motor\+R\+\_\+forward} = 9
+\item 
+int \hyperlink{_au_ve_t_a_8c_a7f3a2878eced8478f11b91a58cdb90de}{motor\+R\+\_\+reverse} = 5
+\item 
+int \hyperlink{_au_ve_t_a_8c_a0128a83073dcaf412bdbd799c6fd4c12}{motor\+L\+\_\+forward} = 10
+\item 
+int \hyperlink{_au_ve_t_a_8c_a3b3de3faedabea6e91c4a3fa909dfa04}{motor\+L\+\_\+reverse} = 6
+\item 
+int \hyperlink{_au_ve_t_a_8c_a640f93dbb6516d9404161a09b938101e}{buzzer} = 13
+\item 
+int \hyperlink{_au_ve_t_a_8c_a3d90133d3051fbc4816d02efd9566d8e}{R} = 2
+\item 
+int \hyperlink{_au_ve_t_a_8c_ab8735735273b982cc3125e51fe46e2f4}{G} = 3
+\item 
+int \hyperlink{_au_ve_t_a_8c_a12857102343f2f2a198414bdcc70e51b}{B} = 4
+\item 
+int \hyperlink{_au_ve_t_a_8c_a41bddc7995dcb692ff59fc2d33cebbb5}{servo\+\_\+open} = 125
+\item 
+int \hyperlink{_au_ve_t_a_8c_a33f9ebc0e41b7d0f334060f5d7792f63}{servo\+\_\+close} = 10
+\item 
+int \hyperlink{_au_ve_t_a_8c_ac1ca73c53db6d50ef98092be3d97980f}{adjust\+M\+\_\+delay} = 1
+\item 
+int \hyperlink{_au_ve_t_a_8c_a05dd9a87e4257aab34d668d486b7b257}{stopD} = 40
+\item 
+int \hyperlink{_au_ve_t_a_8c_a5ec767f4715f0c7c73155a6911b7e56c}{reactionD} = 15
+\item 
+int \hyperlink{_au_ve_t_a_8c_aa919cc1f98cd704ff69a287b60575eb7}{motor\+Power} = 254
+\item 
+bool \hyperlink{_au_ve_t_a_8c_aef3d0de2f893829e276f22402ad16202}{obstacle\+\_\+presence} = digital\+Read(\hyperlink{_au_ve_t_a_8c_a8ed36056dc13650a155dffb6cf08e7ca}{obstacle\+\_\+pin})
+\item 
+bool \hyperlink{_au_ve_t_a_8c_a7c22c0d414bd4b3b74136d583d92f644}{track1} = digital\+Read(\hyperlink{_au_ve_t_a_8c_a48ab186a7734c039bf8f4b9f4bb0d847}{track1\+\_\+pin})
+\item 
+bool \hyperlink{_au_ve_t_a_8c_a7fff810e1b33766bb5518bfc509000c8}{final\+\_\+sensor} = digital\+Read(\hyperlink{_au_ve_t_a_8c_a73d6395b8374d0ca4290405365f2ad89}{final\+\_\+pin})
+\item 
+Servo \hyperlink{_au_ve_t_a_8c_aecf370c8f3e57a71cc82069828b73b71}{my\+Servo}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_au_ve_t_a_8c_a6f7b09e855c3f3cdcea60d89acbd86a9}\label{_au_ve_t_a_8c_a6f7b09e855c3f3cdcea60d89acbd86a9}} 
+\index{Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}!control\+\_\+mode\+\_\+func@{control\+\_\+mode\+\_\+func}}
+\index{control\+\_\+mode\+\_\+func@{control\+\_\+mode\+\_\+func}!Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}}
+\subsubsection{\texorpdfstring{control\+\_\+mode\+\_\+func()}{control\_mode\_func()}}
+{\footnotesize\ttfamily void control\+\_\+mode\+\_\+func (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Esta función implementa y ejecuta las acciones y funciones necesarias para el funcionamiento durante el modo de control. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em No} & recibe parámetros. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+No retorna. 
+\end{DoxyReturn}
+
+
+Definition at line 409 of file Au\+Ve\+T\+A.\+c.
+
+\mbox{\Hypertarget{_au_ve_t_a_8c_aab4c455e5120dab519f0bc8e3bc9c90b}\label{_au_ve_t_a_8c_aab4c455e5120dab519f0bc8e3bc9c90b}} 
+\index{Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}!end\+\_\+detection@{end\+\_\+detection}}
+\index{end\+\_\+detection@{end\+\_\+detection}!Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}}
+\subsubsection{\texorpdfstring{end\+\_\+detection()}{end\_detection()}}
+{\footnotesize\ttfamily bool end\+\_\+detection (\begin{DoxyParamCaption}\item[{int}]{\+\_\+track1,  }\item[{int}]{\+\_\+track2 }\end{DoxyParamCaption})}
+
+
+
+Esta función determina si se detecta el final del recorrido gracias a la condición recibida de un sensor de tracking y otro de obstáculo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Recibe} & el valor del sensor de tracking. \\
+\hline
+{\em Recibe} & el valor del sensor de obstáculo lateral. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna un bool que indica si el final de la pista ha sido alcanzado. 
+\end{DoxyReturn}
+
+
+Definition at line 280 of file Au\+Ve\+T\+A.\+c.
+
+\mbox{\Hypertarget{_au_ve_t_a_8c_a6090a323c3a6f82d4f9888bbe497b146}\label{_au_ve_t_a_8c_a6090a323c3a6f82d4f9888bbe497b146}} 
+\index{Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}!final\+\_\+track\+\_\+indicator@{final\+\_\+track\+\_\+indicator}}
+\index{final\+\_\+track\+\_\+indicator@{final\+\_\+track\+\_\+indicator}!Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}}
+\subsubsection{\texorpdfstring{final\+\_\+track\+\_\+indicator()}{final\_track\_indicator()}}
+{\footnotesize\ttfamily void final\+\_\+track\+\_\+indicator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Esta función solo enciende las luces en una determinada secuencia para indicar el final del recorrido. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em No} & recibe parámetros. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+No retorna, solo acciona L\+ED R\+GB. 
+\end{DoxyReturn}
+
+
+Definition at line 317 of file Au\+Ve\+T\+A.\+c.
+
+\mbox{\Hypertarget{_au_ve_t_a_8c_a2ff90e7a086b9a5754839a9d6ce82deb}\label{_au_ve_t_a_8c_a2ff90e7a086b9a5754839a9d6ce82deb}} 
+\index{Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}!forward\+\_\+control@{forward\+\_\+control}}
+\index{forward\+\_\+control@{forward\+\_\+control}!Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}}
+\subsubsection{\texorpdfstring{forward\+\_\+control()}{forward\_control()}}
+{\footnotesize\ttfamily void forward\+\_\+control (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Esta función da movimiento de ambas ruedas en dirección de avance del vehículo para el modo de control. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em no} & recibe parámetros. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+no retorna valores, solo ejecuta acciones. 
+\end{DoxyReturn}
+
+
+Definition at line 238 of file Au\+Ve\+T\+A.\+c.
+
+\mbox{\Hypertarget{_au_ve_t_a_8c_a2b5d684278e21f9755065d0c0f8836a0}\label{_au_ve_t_a_8c_a2b5d684278e21f9755065d0c0f8836a0}} 
+\index{Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}!goL@{goL}}
+\index{goL@{goL}!Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}}
+\subsubsection{\texorpdfstring{go\+L()}{goL()}}
+{\footnotesize\ttfamily void goL (\begin{DoxyParamCaption}\item[{int}]{PW }\end{DoxyParamCaption})}
+
+
+
+Esta función da movimiento de rueda derecha y por tanto un giro hacia la izquierda del vehículo para el modo de tracking. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em int} & para potencia deseada en el motor. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+no retorna valores, solo ejecuta acciones. 
+\end{DoxyReturn}
+
+
+Definition at line 183 of file Au\+Ve\+T\+A.\+c.
+
+\mbox{\Hypertarget{_au_ve_t_a_8c_a01a9e10003495da066b27553db5cc9e6}\label{_au_ve_t_a_8c_a01a9e10003495da066b27553db5cc9e6}} 
+\index{Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}!go\+L\+\_\+control@{go\+L\+\_\+control}}
+\index{go\+L\+\_\+control@{go\+L\+\_\+control}!Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}}
+\subsubsection{\texorpdfstring{go\+L\+\_\+control()}{goL\_control()}}
+{\footnotesize\ttfamily void go\+L\+\_\+control (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Esta función da movimiento de rueda derecha y por tanto un giro hacia la izquierda del vehículo para el modo de control. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em no} & recibe parámetros. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+no retorna valores, solo ejecuta acciones. 
+\end{DoxyReturn}
+
+
+Definition at line 224 of file Au\+Ve\+T\+A.\+c.
+
+\mbox{\Hypertarget{_au_ve_t_a_8c_af6e962867b289c8c2b90bd5a272a152d}\label{_au_ve_t_a_8c_af6e962867b289c8c2b90bd5a272a152d}} 
+\index{Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}!goR@{goR}}
+\index{goR@{goR}!Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}}
+\subsubsection{\texorpdfstring{go\+R()}{goR()}}
+{\footnotesize\ttfamily void goR (\begin{DoxyParamCaption}\item[{int}]{PW }\end{DoxyParamCaption})}
+
+
+
+Esta función da movimiento de rueda izquierda y por tanto un giro hacia la derecha del vehículo para el modo de tracking. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em int} & para potencia deseada en el motor. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+no retorna valores, solo ejecuta acciones. 
+\end{DoxyReturn}
+
+
+Definition at line 154 of file Au\+Ve\+T\+A.\+c.
+
+\mbox{\Hypertarget{_au_ve_t_a_8c_a3c6c84447446e1e00692a40403509f46}\label{_au_ve_t_a_8c_a3c6c84447446e1e00692a40403509f46}} 
+\index{Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}!go\+R\+\_\+control@{go\+R\+\_\+control}}
+\index{go\+R\+\_\+control@{go\+R\+\_\+control}!Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}}
+\subsubsection{\texorpdfstring{go\+R\+\_\+control()}{goR\_control()}}
+{\footnotesize\ttfamily void go\+R\+\_\+control (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Esta función da movimiento de rueda izquierda y por tanto un giro hacia la derecha del vehículo para el modo de control. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em no} & recibe parámetros \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+no retorna valores, solo ejecuta acciones. 
+\end{DoxyReturn}
+
+
+Definition at line 210 of file Au\+Ve\+T\+A.\+c.
+
+\mbox{\Hypertarget{_au_ve_t_a_8c_afe461d27b9c48d5921c00d521181f12f}\label{_au_ve_t_a_8c_afe461d27b9c48d5921c00d521181f12f}} 
+\index{Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}!loop@{loop}}
+\index{loop@{loop}!Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}}
+\subsubsection{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily void loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 101 of file Au\+Ve\+T\+A.\+c.
+
+\mbox{\Hypertarget{_au_ve_t_a_8c_a81e8be3e752f0b5d53de93109e8c9df3}\label{_au_ve_t_a_8c_a81e8be3e752f0b5d53de93109e8c9df3}} 
+\index{Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}!my\+Serial@{my\+Serial}}
+\index{my\+Serial@{my\+Serial}!Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}}
+\subsubsection{\texorpdfstring{my\+Serial()}{mySerial()}}
+{\footnotesize\ttfamily Software\+Serial my\+Serial (\begin{DoxyParamCaption}\item[{\hyperlink{_au_ve_t_a_8c_a32522045b380ef6ebe89d8ab4a51e2fe}{R\+X\+\_\+bluetooh}}]{,  }\item[{\hyperlink{_au_ve_t_a_8c_a278564fec9adb8d2cb6ffb1d1f5d98c4}{T\+X\+\_\+bluetooh}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_au_ve_t_a_8c_aae5e8de9460369ac62588681b3146383}\label{_au_ve_t_a_8c_aae5e8de9460369ac62588681b3146383}} 
+\index{Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}!no\+\_\+move@{no\+\_\+move}}
+\index{no\+\_\+move@{no\+\_\+move}!Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}}
+\subsubsection{\texorpdfstring{no\+\_\+move()}{no\_move()}}
+{\footnotesize\ttfamily void no\+\_\+move (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Esta función apaga motores del vehículo para el modo de control. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em no} & recibe parámetros. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+no retorna valores, solo ejecuta acciones. 
+\end{DoxyReturn}
+
+
+Definition at line 266 of file Au\+Ve\+T\+A.\+c.
+
+\mbox{\Hypertarget{_au_ve_t_a_8c_ac97c8f3829c72068405bec6e763318ab}\label{_au_ve_t_a_8c_ac97c8f3829c72068405bec6e763318ab}} 
+\index{Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}!obstacle\+\_\+detection@{obstacle\+\_\+detection}}
+\index{obstacle\+\_\+detection@{obstacle\+\_\+detection}!Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}}
+\subsubsection{\texorpdfstring{obstacle\+\_\+detection()}{obstacle\_detection()}}
+{\footnotesize\ttfamily void obstacle\+\_\+detection (\begin{DoxyParamCaption}\item[{bool}]{\+\_\+obstacle\+\_\+presence }\end{DoxyParamCaption})}
+
+
+
+Esta función determina si se detecta un obstáculo frontal gracias al sensor de obstáculo, en caso de presencia de obstáculo activa el servomotor para removerlo.. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Recibe} & el valor de un sensor de obstáculo frontal. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+No retorna valores, solo activa el servomotor. 
+\end{DoxyReturn}
+
+
+Definition at line 297 of file Au\+Ve\+T\+A.\+c.
+
+\mbox{\Hypertarget{_au_ve_t_a_8c_a86f5707dea93879735a756a067646dde}\label{_au_ve_t_a_8c_a86f5707dea93879735a756a067646dde}} 
+\index{Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}!reverse\+\_\+control@{reverse\+\_\+control}}
+\index{reverse\+\_\+control@{reverse\+\_\+control}!Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}}
+\subsubsection{\texorpdfstring{reverse\+\_\+control()}{reverse\_control()}}
+{\footnotesize\ttfamily void reverse\+\_\+control (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Esta función da movimiento de ambas ruedas en dirección contraria al avance del vehículo para el modo de control. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em no} & recibe parámetros. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+no retorna valores, solo ejecuta acciones. 
+\end{DoxyReturn}
+
+
+Definition at line 252 of file Au\+Ve\+T\+A.\+c.
+
+\mbox{\Hypertarget{_au_ve_t_a_8c_a4fc01d736fe50cf5b977f755b675f11d}\label{_au_ve_t_a_8c_a4fc01d736fe50cf5b977f755b675f11d}} 
+\index{Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}!setup@{setup}}
+\index{setup@{setup}!Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}}
+\subsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily void setup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 63 of file Au\+Ve\+T\+A.\+c.
+
+\mbox{\Hypertarget{_au_ve_t_a_8c_a8bd2026d6d5e6712fab816c58a61a8a0}\label{_au_ve_t_a_8c_a8bd2026d6d5e6712fab816c58a61a8a0}} 
+\index{Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}!tracking\+\_\+mode\+\_\+func@{tracking\+\_\+mode\+\_\+func}}
+\index{tracking\+\_\+mode\+\_\+func@{tracking\+\_\+mode\+\_\+func}!Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}}
+\subsubsection{\texorpdfstring{tracking\+\_\+mode\+\_\+func()}{tracking\_mode\_func()}}
+{\footnotesize\ttfamily void tracking\+\_\+mode\+\_\+func (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Esta función implementa y ejecuta las acciones y funciones necesarias para el funcionamiento durante el modo tracking. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em No} & recibe parámetros. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+No retorna. 
+\end{DoxyReturn}
+
+
+Definition at line 380 of file Au\+Ve\+T\+A.\+c.
+
+\mbox{\Hypertarget{_au_ve_t_a_8c_a602ed60e21531aef539b97a6ddd94358}\label{_au_ve_t_a_8c_a602ed60e21531aef539b97a6ddd94358}} 
+\index{Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}!trompo@{trompo}}
+\index{trompo@{trompo}!Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}}
+\subsubsection{\texorpdfstring{trompo()}{trompo()}}
+{\footnotesize\ttfamily void trompo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Esta función hace que se activen las ruedas de manera que el vehíulo gire sobre su propio eje horizontal para el modo tracking. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em No} & recibe parámetros. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+No retorna. 
+\end{DoxyReturn}
+
+
+Definition at line 353 of file Au\+Ve\+T\+A.\+c.
+
+\mbox{\Hypertarget{_au_ve_t_a_8c_a70fe291af7aacebdc35e8ceca09d999c}\label{_au_ve_t_a_8c_a70fe291af7aacebdc35e8ceca09d999c}} 
+\index{Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}!trompo\+\_\+final@{trompo\+\_\+final}}
+\index{trompo\+\_\+final@{trompo\+\_\+final}!Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}}
+\subsubsection{\texorpdfstring{trompo\+\_\+final()}{trompo\_final()}}
+{\footnotesize\ttfamily void trompo\+\_\+final (\begin{DoxyParamCaption}\item[{int}]{power }\end{DoxyParamCaption})}
+
+
+
+Esta función hace que se activen las ruedas de manera que el vehíulo gire sobre su propio eje horizontal para el modo control. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Recibe} & la potencia que se desea usar para los motores. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+No retorna. 
+\end{DoxyReturn}
+
+
+Definition at line 367 of file Au\+Ve\+T\+A.\+c.
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{_au_ve_t_a_8c_ac1ca73c53db6d50ef98092be3d97980f}\label{_au_ve_t_a_8c_ac1ca73c53db6d50ef98092be3d97980f}} 
+\index{Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}!adjust\+M\+\_\+delay@{adjust\+M\+\_\+delay}}
+\index{adjust\+M\+\_\+delay@{adjust\+M\+\_\+delay}!Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}}
+\subsubsection{\texorpdfstring{adjust\+M\+\_\+delay}{adjustM\_delay}}
+{\footnotesize\ttfamily int adjust\+M\+\_\+delay = 1}
+
+
+
+Definition at line 34 of file Au\+Ve\+T\+A.\+c.
+
+\mbox{\Hypertarget{_au_ve_t_a_8c_a12857102343f2f2a198414bdcc70e51b}\label{_au_ve_t_a_8c_a12857102343f2f2a198414bdcc70e51b}} 
+\index{Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}!B@{B}}
+\index{B@{B}!Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}}
+\subsubsection{\texorpdfstring{B}{B}}
+{\footnotesize\ttfamily int B = 4}
+
+
+
+Definition at line 31 of file Au\+Ve\+T\+A.\+c.
+
+\mbox{\Hypertarget{_au_ve_t_a_8c_a640f93dbb6516d9404161a09b938101e}\label{_au_ve_t_a_8c_a640f93dbb6516d9404161a09b938101e}} 
+\index{Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}!buzzer@{buzzer}}
+\index{buzzer@{buzzer}!Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}}
+\subsubsection{\texorpdfstring{buzzer}{buzzer}}
+{\footnotesize\ttfamily int buzzer = 13}
+
+
+
+Definition at line 28 of file Au\+Ve\+T\+A.\+c.
+
+\mbox{\Hypertarget{_au_ve_t_a_8c_a73d6395b8374d0ca4290405365f2ad89}\label{_au_ve_t_a_8c_a73d6395b8374d0ca4290405365f2ad89}} 
+\index{Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}!final\+\_\+pin@{final\+\_\+pin}}
+\index{final\+\_\+pin@{final\+\_\+pin}!Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}}
+\subsubsection{\texorpdfstring{final\+\_\+pin}{final\_pin}}
+{\footnotesize\ttfamily int final\+\_\+pin = 7}
+
+
+
+Definition at line 23 of file Au\+Ve\+T\+A.\+c.
+
+\mbox{\Hypertarget{_au_ve_t_a_8c_a7fff810e1b33766bb5518bfc509000c8}\label{_au_ve_t_a_8c_a7fff810e1b33766bb5518bfc509000c8}} 
+\index{Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}!final\+\_\+sensor@{final\+\_\+sensor}}
+\index{final\+\_\+sensor@{final\+\_\+sensor}!Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}}
+\subsubsection{\texorpdfstring{final\+\_\+sensor}{final\_sensor}}
+{\footnotesize\ttfamily bool final\+\_\+sensor = digital\+Read(\hyperlink{_au_ve_t_a_8c_a73d6395b8374d0ca4290405365f2ad89}{final\+\_\+pin})}
+
+
+
+Definition at line 54 of file Au\+Ve\+T\+A.\+c.
+
+\mbox{\Hypertarget{_au_ve_t_a_8c_ab8735735273b982cc3125e51fe46e2f4}\label{_au_ve_t_a_8c_ab8735735273b982cc3125e51fe46e2f4}} 
+\index{Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}!G@{G}}
+\index{G@{G}!Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}}
+\subsubsection{\texorpdfstring{G}{G}}
+{\footnotesize\ttfamily int G = 3}
+
+
+
+Definition at line 30 of file Au\+Ve\+T\+A.\+c.
+
+\mbox{\Hypertarget{_au_ve_t_a_8c_a0128a83073dcaf412bdbd799c6fd4c12}\label{_au_ve_t_a_8c_a0128a83073dcaf412bdbd799c6fd4c12}} 
+\index{Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}!motor\+L\+\_\+forward@{motor\+L\+\_\+forward}}
+\index{motor\+L\+\_\+forward@{motor\+L\+\_\+forward}!Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}}
+\subsubsection{\texorpdfstring{motor\+L\+\_\+forward}{motorL\_forward}}
+{\footnotesize\ttfamily int motor\+L\+\_\+forward = 10}
+
+
+
+Definition at line 26 of file Au\+Ve\+T\+A.\+c.
+
+\mbox{\Hypertarget{_au_ve_t_a_8c_a3b3de3faedabea6e91c4a3fa909dfa04}\label{_au_ve_t_a_8c_a3b3de3faedabea6e91c4a3fa909dfa04}} 
+\index{Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}!motor\+L\+\_\+reverse@{motor\+L\+\_\+reverse}}
+\index{motor\+L\+\_\+reverse@{motor\+L\+\_\+reverse}!Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}}
+\subsubsection{\texorpdfstring{motor\+L\+\_\+reverse}{motorL\_reverse}}
+{\footnotesize\ttfamily int motor\+L\+\_\+reverse = 6}
+
+
+
+Definition at line 27 of file Au\+Ve\+T\+A.\+c.
+
+\mbox{\Hypertarget{_au_ve_t_a_8c_aa919cc1f98cd704ff69a287b60575eb7}\label{_au_ve_t_a_8c_aa919cc1f98cd704ff69a287b60575eb7}} 
+\index{Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}!motor\+Power@{motor\+Power}}
+\index{motor\+Power@{motor\+Power}!Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}}
+\subsubsection{\texorpdfstring{motor\+Power}{motorPower}}
+{\footnotesize\ttfamily int motor\+Power = 254}
+
+
+
+Definition at line 37 of file Au\+Ve\+T\+A.\+c.
+
+\mbox{\Hypertarget{_au_ve_t_a_8c_ac78a94bff5a4300fa31918f5597aee5c}\label{_au_ve_t_a_8c_ac78a94bff5a4300fa31918f5597aee5c}} 
+\index{Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}!motor\+R\+\_\+forward@{motor\+R\+\_\+forward}}
+\index{motor\+R\+\_\+forward@{motor\+R\+\_\+forward}!Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}}
+\subsubsection{\texorpdfstring{motor\+R\+\_\+forward}{motorR\_forward}}
+{\footnotesize\ttfamily int motor\+R\+\_\+forward = 9}
+
+
+
+Definition at line 24 of file Au\+Ve\+T\+A.\+c.
+
+\mbox{\Hypertarget{_au_ve_t_a_8c_a7f3a2878eced8478f11b91a58cdb90de}\label{_au_ve_t_a_8c_a7f3a2878eced8478f11b91a58cdb90de}} 
+\index{Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}!motor\+R\+\_\+reverse@{motor\+R\+\_\+reverse}}
+\index{motor\+R\+\_\+reverse@{motor\+R\+\_\+reverse}!Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}}
+\subsubsection{\texorpdfstring{motor\+R\+\_\+reverse}{motorR\_reverse}}
+{\footnotesize\ttfamily int motor\+R\+\_\+reverse = 5}
+
+
+
+Definition at line 25 of file Au\+Ve\+T\+A.\+c.
+
+\mbox{\Hypertarget{_au_ve_t_a_8c_aecf370c8f3e57a71cc82069828b73b71}\label{_au_ve_t_a_8c_aecf370c8f3e57a71cc82069828b73b71}} 
+\index{Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}!my\+Servo@{my\+Servo}}
+\index{my\+Servo@{my\+Servo}!Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}}
+\subsubsection{\texorpdfstring{my\+Servo}{myServo}}
+{\footnotesize\ttfamily Servo my\+Servo}
+
+
+
+Definition at line 57 of file Au\+Ve\+T\+A.\+c.
+
+\mbox{\Hypertarget{_au_ve_t_a_8c_a8ed36056dc13650a155dffb6cf08e7ca}\label{_au_ve_t_a_8c_a8ed36056dc13650a155dffb6cf08e7ca}} 
+\index{Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}!obstacle\+\_\+pin@{obstacle\+\_\+pin}}
+\index{obstacle\+\_\+pin@{obstacle\+\_\+pin}!Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}}
+\subsubsection{\texorpdfstring{obstacle\+\_\+pin}{obstacle\_pin}}
+{\footnotesize\ttfamily int obstacle\+\_\+pin = 8}
+
+
+
+Definition at line 21 of file Au\+Ve\+T\+A.\+c.
+
+\mbox{\Hypertarget{_au_ve_t_a_8c_aef3d0de2f893829e276f22402ad16202}\label{_au_ve_t_a_8c_aef3d0de2f893829e276f22402ad16202}} 
+\index{Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}!obstacle\+\_\+presence@{obstacle\+\_\+presence}}
+\index{obstacle\+\_\+presence@{obstacle\+\_\+presence}!Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}}
+\subsubsection{\texorpdfstring{obstacle\+\_\+presence}{obstacle\_presence}}
+{\footnotesize\ttfamily bool obstacle\+\_\+presence = digital\+Read(\hyperlink{_au_ve_t_a_8c_a8ed36056dc13650a155dffb6cf08e7ca}{obstacle\+\_\+pin})}
+
+
+
+Definition at line 52 of file Au\+Ve\+T\+A.\+c.
+
+\mbox{\Hypertarget{_au_ve_t_a_8c_a3d90133d3051fbc4816d02efd9566d8e}\label{_au_ve_t_a_8c_a3d90133d3051fbc4816d02efd9566d8e}} 
+\index{Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}!R@{R}}
+\index{R@{R}!Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}}
+\subsubsection{\texorpdfstring{R}{R}}
+{\footnotesize\ttfamily int R = 2}
+
+
+
+Definition at line 29 of file Au\+Ve\+T\+A.\+c.
+
+\mbox{\Hypertarget{_au_ve_t_a_8c_a5ec767f4715f0c7c73155a6911b7e56c}\label{_au_ve_t_a_8c_a5ec767f4715f0c7c73155a6911b7e56c}} 
+\index{Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}!reactionD@{reactionD}}
+\index{reactionD@{reactionD}!Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}}
+\subsubsection{\texorpdfstring{reactionD}{reactionD}}
+{\footnotesize\ttfamily int reactionD = 15}
+
+
+
+Definition at line 36 of file Au\+Ve\+T\+A.\+c.
+
+\mbox{\Hypertarget{_au_ve_t_a_8c_a32522045b380ef6ebe89d8ab4a51e2fe}\label{_au_ve_t_a_8c_a32522045b380ef6ebe89d8ab4a51e2fe}} 
+\index{Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}!R\+X\+\_\+bluetooh@{R\+X\+\_\+bluetooh}}
+\index{R\+X\+\_\+bluetooh@{R\+X\+\_\+bluetooh}!Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}}
+\subsubsection{\texorpdfstring{R\+X\+\_\+bluetooh}{RX\_bluetooh}}
+{\footnotesize\ttfamily int R\+X\+\_\+bluetooh = 0}
+
+
+
+Definition at line 18 of file Au\+Ve\+T\+A.\+c.
+
+\mbox{\Hypertarget{_au_ve_t_a_8c_a33f9ebc0e41b7d0f334060f5d7792f63}\label{_au_ve_t_a_8c_a33f9ebc0e41b7d0f334060f5d7792f63}} 
+\index{Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}!servo\+\_\+close@{servo\+\_\+close}}
+\index{servo\+\_\+close@{servo\+\_\+close}!Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}}
+\subsubsection{\texorpdfstring{servo\+\_\+close}{servo\_close}}
+{\footnotesize\ttfamily int servo\+\_\+close = 10}
+
+
+
+Definition at line 33 of file Au\+Ve\+T\+A.\+c.
+
+\mbox{\Hypertarget{_au_ve_t_a_8c_a41bddc7995dcb692ff59fc2d33cebbb5}\label{_au_ve_t_a_8c_a41bddc7995dcb692ff59fc2d33cebbb5}} 
+\index{Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}!servo\+\_\+open@{servo\+\_\+open}}
+\index{servo\+\_\+open@{servo\+\_\+open}!Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}}
+\subsubsection{\texorpdfstring{servo\+\_\+open}{servo\_open}}
+{\footnotesize\ttfamily int servo\+\_\+open = 125}
+
+
+
+Definition at line 32 of file Au\+Ve\+T\+A.\+c.
+
+\mbox{\Hypertarget{_au_ve_t_a_8c_a54160e8df25f2b7bd4b79c66846422b5}\label{_au_ve_t_a_8c_a54160e8df25f2b7bd4b79c66846422b5}} 
+\index{Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}!servo\+\_\+pin@{servo\+\_\+pin}}
+\index{servo\+\_\+pin@{servo\+\_\+pin}!Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}}
+\subsubsection{\texorpdfstring{servo\+\_\+pin}{servo\_pin}}
+{\footnotesize\ttfamily int servo\+\_\+pin = 11}
+
+
+
+Definition at line 20 of file Au\+Ve\+T\+A.\+c.
+
+\mbox{\Hypertarget{_au_ve_t_a_8c_a05dd9a87e4257aab34d668d486b7b257}\label{_au_ve_t_a_8c_a05dd9a87e4257aab34d668d486b7b257}} 
+\index{Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}!stopD@{stopD}}
+\index{stopD@{stopD}!Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}}
+\subsubsection{\texorpdfstring{stopD}{stopD}}
+{\footnotesize\ttfamily int stopD = 40}
+
+
+
+Definition at line 35 of file Au\+Ve\+T\+A.\+c.
+
+\mbox{\Hypertarget{_au_ve_t_a_8c_a7c22c0d414bd4b3b74136d583d92f644}\label{_au_ve_t_a_8c_a7c22c0d414bd4b3b74136d583d92f644}} 
+\index{Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}!track1@{track1}}
+\index{track1@{track1}!Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}}
+\subsubsection{\texorpdfstring{track1}{track1}}
+{\footnotesize\ttfamily bool track1 = digital\+Read(\hyperlink{_au_ve_t_a_8c_a48ab186a7734c039bf8f4b9f4bb0d847}{track1\+\_\+pin})}
+
+
+
+Definition at line 53 of file Au\+Ve\+T\+A.\+c.
+
+\mbox{\Hypertarget{_au_ve_t_a_8c_a48ab186a7734c039bf8f4b9f4bb0d847}\label{_au_ve_t_a_8c_a48ab186a7734c039bf8f4b9f4bb0d847}} 
+\index{Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}!track1\+\_\+pin@{track1\+\_\+pin}}
+\index{track1\+\_\+pin@{track1\+\_\+pin}!Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}}
+\subsubsection{\texorpdfstring{track1\+\_\+pin}{track1\_pin}}
+{\footnotesize\ttfamily int track1\+\_\+pin = 12}
+
+
+
+Definition at line 22 of file Au\+Ve\+T\+A.\+c.
+
+\mbox{\Hypertarget{_au_ve_t_a_8c_a278564fec9adb8d2cb6ffb1d1f5d98c4}\label{_au_ve_t_a_8c_a278564fec9adb8d2cb6ffb1d1f5d98c4}} 
+\index{Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}!T\+X\+\_\+bluetooh@{T\+X\+\_\+bluetooh}}
+\index{T\+X\+\_\+bluetooh@{T\+X\+\_\+bluetooh}!Au\+Ve\+T\+A.\+c@{Au\+Ve\+T\+A.\+c}}
+\subsubsection{\texorpdfstring{T\+X\+\_\+bluetooh}{TX\_bluetooh}}
+{\footnotesize\ttfamily int T\+X\+\_\+bluetooh = 1}
+
+
+
+Definition at line 19 of file Au\+Ve\+T\+A.\+c.
+
