@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 
 import serial
 import math
@@ -13,6 +12,9 @@ import _thread
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from matplotlib.figure import Figure
 import time
+
+import comunications
+import csv
 
 
 class Interfase:
@@ -113,15 +115,17 @@ class Interfase:
 
         # THREAD AND MAINLOOP:
 
-        self.window.after(300, _thread.start_new_thread, self.getDataFromCSV, ())
+        self.window.after(300, _thread.start_new_thread,
+                          self.getDataFromCSV, ())
         self.window.after(300, _thread.start_new_thread, self.plotter, ())
         self.window.mainloop()
-        
+
     ################### DEF FUNCTIONS ###################
 
     # BUILDER OF MAIN LABELS
     def buildMainLabels(self):
-        textList = ["Activity time:", "Current freq:", "Distance:", "Current speed:","Max speed:"]
+        textList = ["Activity time:", "Current freq:",
+                    "Distance:", "Current speed:", "Max speed:"]
         for i in range(0, len(textList)):
             self.myLabelTextCreate(
                 self.window, textList[i], self.TEXT_FONT, self.MX, self.MY*(i+1))
@@ -135,7 +139,7 @@ class Interfase:
 
     # PLOTTER FUNC:
     def plotter(self):
-        while True:            
+        while True:
             self.vp.cla()
             self.vp.set_ylabel("Velocity (km/h)")
             self.vp.set_xlabel("Time (s)")
@@ -161,14 +165,14 @@ class Interfase:
         v0 = 0
         maxVel0 = 0
 
+        f = open('acticicy_data.csv','r')
+        reader = csv.reader(file)
         while(1):
             ##################################################
-                #   LECTURA DE ARCHIVOS ACÁ
-            
-            
+            #   LECTURA DE ARCHIVOS ACÁ
+            reader
             ##################################################
-            values = serialValues.split(',')
-            
+
             th = values[0]
             tm = values[1]
             ts = values[2]
@@ -179,7 +183,7 @@ class Interfase:
             d0 = round(d0+2*math.pi*f0*0.736*1, 3)
             v0 = round(2*math.pi*f0*0.736, 2)
 
-            if(v0>maxVel0):
+            if(v0 > maxVel0):
                 maxVel0 = v0
             ################################
             t = "  "+th + " h     "+tm + " min     " + ts+" s  "
@@ -187,8 +191,6 @@ class Interfase:
             d = "  "+str(d0)+" m  "
             v = "  "+str(v0)+" km/h  "
             maxVel = str(maxVel0)+' km/h'
-            
-
 
             self.timeDataToPlot.append(timeInSeconds)
             self.frecDataToPlot.append(f0)
@@ -203,4 +205,5 @@ class Interfase:
         arduino.close()
 
 
+com = comunications()
 myGUI = Interfase()

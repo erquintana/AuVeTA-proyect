@@ -16,6 +16,7 @@ int finishButton = 1;
 // comunication decl RX
 // comunication decl TX
 Encoder encoder(8, 9); // rotatory encoder setup
+int bautrate = 19200;
 
 
 
@@ -39,8 +40,8 @@ unsigned long millPrev = 0;
 unsigned long mill = 0;
 int countForFinishing;
 bool restart = false;
-int aux0;
-int flag = 0;
+int aux0 = 0;
+int flag = 1;
 
 bool state = false;
 int R = 10;
@@ -49,7 +50,7 @@ int B = 12;
 
 
 void setup() {
-  Serial.begin(19200); // serial for test and visualization, comment later if not needed
+  Serial.begin(bautrate); // serial for test and visualization, comment later if not needed
   pinMode(sensorPin, INPUT); // black = 1 || white = 0
   pinMode(buttonPin, INPUT); // on = 0
   pinMode(buzzerPin, OUTPUT); // pressed = 0
@@ -59,14 +60,15 @@ void setup() {
   pinMode(G, OUTPUT);
   pinMode(B, OUTPUT);
 
-  st = "m,r,e,s,f";
-  Serial.println(st);
+  //st = "m,r,e,s,f";
+  //Serial.println(st);
 
 }
 
 
 
 void loop() {
+
 
   countForFinishFunct();
 
@@ -182,6 +184,13 @@ void countForFinishFunct() {
     aux0 = aux0 + 1;
   }
   while (aux0 > 150 && state == false) {
+
+//    if (flag == 1) {
+      Serial.println("FINISHED");
+//      flag = 0;
+//     delay(1000);
+//   }
+
     digitalWrite(R, LOW);
     digitalWrite(G, LOW);
     digitalWrite(B, HIGH);
@@ -189,11 +198,5 @@ void countForFinishFunct() {
     digitalWrite(B, LOW);
     delay(500);
 
-
-    if (flag == 0) {
-      Serial.println("FINISHED");
-    flag = 1;
-    }
-    
   }
 }
